@@ -1,0 +1,613 @@
+{
+  "intents": [
+    {
+      "intent": "cancela",
+      "examples": [
+        {
+          "text": "cancela"
+        },
+        {
+          "text": "cancelar"
+        },
+        {
+          "text": "desejo cancela"
+        },
+        {
+          "text": "favor cancelar"
+        },
+        {
+          "text": "não quero"
+        },
+        {
+          "text": "quero cancelar"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "finalizacao",
+      "examples": [
+        {
+          "text": "adeus"
+        },
+        {
+          "text": "até logo"
+        },
+        {
+          "text": "até mais"
+        },
+        {
+          "text": "chau"
+        },
+        {
+          "text": "obrigado"
+        },
+        {
+          "text": "por enquanto é só"
+        },
+        {
+          "text": "tchau"
+        },
+        {
+          "text": "to indo"
+        }
+      ],
+      "description": "tchau"
+    },
+    {
+      "intent": "Saudacao",
+      "examples": [
+        {
+          "text": "Boa noite"
+        },
+        {
+          "text": "Boa tarde"
+        },
+        {
+          "text": "Bom dia"
+        },
+        {
+          "text": "oi"
+        },
+        {
+          "text": "Olá"
+        },
+        {
+          "text": "tudo bem?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "semAno",
+      "examples": [
+        {
+          "text": "nao"
+        },
+        {
+          "text": "não"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "sobrefilme",
+      "examples": [
+        {
+          "text": "Desejo saber a sinopse dos filmes"
+        },
+        {
+          "text": "filmes"
+        },
+        {
+          "text": "Quero saber a sinopse dos filmes"
+        },
+        {
+          "text": "sinopses"
+        }
+      ],
+      "description": "sobre filme"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "titulo",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "a bela e a fera",
+          "synonyms": [
+            "A Bela e o Monstro",
+            "Beauty and the Beast"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "batman",
+          "synonyms": [
+            "batman",
+            "o homem morcego"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "batman vs superman",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "blade runner",
+          "synonyms": [
+            "O CAÇADOR DE ANDRÓIDES"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "capitao america",
+          "synonyms": [
+            "captain america"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cinderella",
+          "synonyms": [
+            "cinderella"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "corra",
+          "synonyms": [
+            "run"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "duna",
+          "synonyms": [
+            "dune"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "esquadrao suicida",
+          "synonyms": [
+            "suicide squad"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "guardioes da galaxia",
+          "synonyms": [
+            "Guardians of the Galaxy"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "homem aranha",
+          "synonyms": [
+            "spider man"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Interstellar",
+          "synonyms": [
+            "Interstelar "
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "o auto da compadecida",
+          "synonyms": [
+            "auto da compadecida"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "shazam",
+          "synonyms": [
+            "shazam"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "star wars",
+          "synonyms": [
+            "guerras nas estrelas"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "superman",
+          "synonyms": [
+            "super homem"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vemon",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "vingadores",
+          "synonyms": [
+            "the avengers"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "viuva negra",
+          "synonyms": [
+            "black widow"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "xmen",
+          "synonyms": [
+            "x-men"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://us-south.functions.appdomain.cloud/api/v1/web/beatrizmarinh%40gmail.com_dev/default/getFilmespy.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá, Eu sou Apolo. Sou um serviço que traz sinopses de filmes ou séries."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_7_1634859424857"
+      },
+      "conditions": "welcome || #Saudacao",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_6_1634829345960",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual ano?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_6_1634943812719",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1634943812719",
+      "previous_sibling": "handler_9_1634943812719"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1634859445971",
+      "context": {
+        "titulo": "@titulo"
+      },
+      "conditions": "@titulo",
+      "event_name": "input",
+      "dialog_node": "handler_4_1634859445998"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual nome do filme ou série que deseja pesquisar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_6_1634859445971",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1634859445998",
+      "previous_sibling": "handler_4_1634859445998"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "node_7_1634859424857",
+      "context": {
+        "semAno": true
+      },
+      "next_step": {
+        "behavior": "skip_all_slots"
+      },
+      "conditions": "#semAno",
+      "event_name": "generic",
+      "dialog_node": "handler_5_1634860990699",
+      "previous_sibling": "response_7_1634914028181"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1634943812719",
+      "context": {
+        "ano": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_9_1634943812719"
+    },
+    {
+      "type": "standard",
+      "title": "Finalizacao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Obrigado por usar nossos serviços."
+              },
+              {
+                "text": "Até logo!"
+              },
+              {
+                "text": "Tchau!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#finalizacao",
+      "dialog_node": "node_6_1634829345960",
+      "previous_sibling": "node_7_1634859424857"
+    },
+    {
+      "type": "frame",
+      "title": "sobrefilmes",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "ano": "$ano",
+            "titulo": "$titulo"
+          },
+          "result_variable": "resultado"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1634829345960"
+      },
+      "conditions": "#sobrefilme",
+      "dialog_node": "node_7_1634859424857",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Boa noite, Eu sou Apolo.  Deseja ver a imagem do dia?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bem-vindo",
+      "disabled": true,
+      "conditions": "now().after('18:01')",
+      "dialog_node": "response_10_1634826381781",
+      "previous_sibling": "response_2_1634826343547"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Boa tarde, Eu sou Apolo.  Deseja ver a imagem do dia?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bem-vindo",
+      "disabled": true,
+      "conditions": "now().after('12:01') && now().before('18:00')",
+      "dialog_node": "response_2_1634826343547",
+      "previous_sibling": "response_5_1634826230118"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bom dia, Eu sou Apolo. Deseja ver a imagem do dia?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bem-vindo",
+      "disabled": true,
+      "conditions": "now().after('06:00') && now().before('12:00')",
+      "dialog_node": "response_5_1634826230118"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "",
+            "source": "<?$resultado.poster?>",
+            "description": "<?$resultado.plot?>",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<?$resultado.title?>, <?$resultado.year?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "<?$resultado.plot?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1634859424857",
+      "context": {
+        "ano": null,
+        "titulo": null
+      },
+      "conditions": "$resultado",
+      "dialog_node": "response_5_1634914027537"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Não foi possível pesquisar esse filme/série"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_7_1634859424857",
+      "context": {},
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1634914028181",
+      "previous_sibling": "response_5_1634914027537"
+    },
+    {
+      "type": "slot",
+      "parent": "node_7_1634859424857",
+      "variable": "$titulo",
+      "dialog_node": "slot_6_1634859445971",
+      "previous_sibling": "handler_5_1634860990699"
+    },
+    {
+      "type": "slot",
+      "parent": "node_7_1634859424857",
+      "variable": "$ano",
+      "dialog_node": "slot_6_1634943812719",
+      "previous_sibling": "slot_6_1634859445971"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "chatbot skill",
+  "language": "pt-br",
+  "description": ""
+}
